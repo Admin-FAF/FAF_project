@@ -1,0 +1,127 @@
+/* ==========================================================================
+   PAGE LOGIN
+   ========================================================================== */
+
+form[name="form_login"] .panel,
+form[name="form_login"] ~ .panel,
+.panel.row3, #cp-main .panel,
+#form_confirm .panel {
+    background: var(--bg);
+    border: unset;
+    box-shadow: unset;
+    padding: 36px 0;
+}
+
+form[name="form_login"] .panel::before,
+form[name="form_login"] ~ .panel::before,
+.panel.row3::before, #cp-main .panel::before,
+#form_confirm .panel::before {
+    width: 0;
+}
+
+form[name="form_login"] .content {
+    color: var(--text);
+    font-family: Be Vietnam Pro;
+    font-size: var(--text-base);
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    overflow: unset;
+}
+
+@media (max-width: 800px) {
+    form[name="form_login"] .content {
+        grid-template-columns: 1fr;
+    }
+}
+
+form[name="form_login"] .h3 {
+    grid-row: 1;
+    grid-column: 1 / span2;
+}
+
+form[name="form_login"] .fields1.left {
+    background-color: var(--bg);
+    grid-row: 2;
+    grid-column: 1 / span2;
+}
+
+form[name="form_login"] .fld_connexion {
+    width: unset;
+}
+
+form[name="form_login"] .social_btn {
+    grid-row: 2;
+    grid-column: 2;
+}
+  
+@media (max-width: 1250px) {
+    form[name="form_login"] .social_btn {
+        grid-row: 3;
+        grid-column: 1 / span2;
+        margin-top: 1em;
+        justify-content: flex-start !important;
+    }
+}
+
+.fb_or {
+    background-color: transparent;
+    border: unset;
+    color: var(--text);
+}
+
+
+/* ==========================================================================
+   PAGE ENREGISTREMENT
+   ========================================================================== */
+
+#cp-main {
+    float: unset;
+    width: 100%;
+    margin-left: unset;
+    margin-top: 4em;
+    margin-bottom: 2em;
+}
+
+#cp-main h1 {
+    color: var(--title);
+    margin-left: unset;
+}
+
+#ucp fieldset dl {
+    padding: unset;
+    margin-bottom: 1em;
+}
+
+#ucp fieldset dt {
+    float: unset;
+    width: unset;
+    padding-bottom: 5px;
+}
+
+#ucp fieldset dd {
+    margin-left: unset;
+    margin-bottom: unset;
+}
+
+#ucp fieldset dd input.inputbox {
+    width: auto;
+}
+
+.ucp-main .submit-buttons .button1 {
+    padding: 9px 15px !important;
+}
+
+.ucp-main .submit-buttons .button2 {
+    padding: 6px 12px !important;
+}
+
+/* confirmation */
+#form_confirm .content {
+    color: var(--text);
+    font-family: 'Be Vietnam Pro';
+    font-size: var(--text-base);
+}
+
+#form_confirm .content .cf-turnstile {
+    margin: 2em 0;
+}

@@ -1,0 +1,966 @@
+/* ==========================================================================
+   LISTE DES MEMBRES
+   ========================================================================== */
+@media (max-width:800px) {
+    .member-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.memberlist-form .filter-item [value*="interests"],
+.memberlist-form .filter-item [value*="posts"],
+.memberlist-form .filter-item [value*="website"],
+.memberlist-form .filter-item [value*="groups"],
+.memberlist-form .filter-item [value*="point"] {
+    display: none;
+}
+
+.member-card {
+    border-radius: var(--radius-md);
+    padding: 20px;
+}
+
+.member-card:hover {
+    transform:translateY(-1px);
+    box-shadow: var(--shadow-soft);
+}
+
+.member-card dt {
+    display: none;
+}
+
+.avatar-member img {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 1px 1px rgb(0 0 0 / .3), 0 0 1px rgb(0 0 0 / .3);
+    border: 2px solid var(--border);
+}
+
+.username-member {
+    color: var(--text-base);
+    font-size: var(--title-tn);
+    font-family: "Lato", sans-serif;
+    font-weight: 600 !important;
+    letter-spacing: .1em;
+}
+
+.activity-member .field_uneditable {
+    color: var(--text-soft);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: var(--text-tn);
+    font-family: "Lato", sans-serif;
+    letter-spacing: .25em;
+}
+
+.biography-member {
+    margin: 0.5em 0;
+}
+
+.biography-member dd {
+    text-align: justify;
+    display: -webkit-box;
+    -webkit-line-clamp: 8;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    border-left: 1px solid var(--border);
+    padding: 0 0 0 18px;
+}
+
+.joined, .active {
+    font-size: var(--text-sm);
+    margin-bottom: 0.25em;
+}
+
+
+
+/* ==========================================================================
+   PROFIL - PAGE
+   ========================================================================== */
+@media (max-width: 800px) {
+    .profile-member-infos {
+        grid-template-columns: 1fr !important;
+        gap: unset !important;
+    }
+}
+
+@media (max-width: 800px) {
+    .profile-member-header {
+        grid-template-columns: 1fr !important;
+        gap: 1em !important;
+    }
+}
+
+@media (max-width: 800px) {
+    .profile-member-stats {
+        grid-column: 1 / span2 !important;
+        grid-row: 2 !important;
+    }
+}
+
+@media (max-width: 800px) {
+    .avatar-img-container {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.profile-member-header-left img {
+    height: 140px;
+    width: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 1px 1px rgb(0 0 0 / .3), 0 0 1px rgb(0 0 0 / .3);
+    border: 3px solid var(--border);
+}
+
+.profile-online {
+    font-size: var(--text-sm);
+    padding-left: 5px;
+    text-transform: initial !important;
+}
+
+.profile-fields-list #field_id-6,
+.profile-fields-list #field_id-13,
+.profile-fields-list #field_id-14,
+.profile-fields-list #field_id-4,
+.profile-fields-list #field_id-9 dt,
+.profile-fields-list #field_id1 dt,
+.profile-fields-list #field_id6,
+.profile-stats-list #field_id-9,
+.profile-stats-list #field_id-11,
+.profile-stats-list #field_id-12,
+.profile-stats-list #field_id1,
+.profile-stats-list #field_id3,
+.profile-stats-list #field_id4,
+.profile-stats-list #field_id5,
+.profile-stats-list #field_id6,
+.profile-stats-list #field_id-7,
+.profile-member-carrousel #field_id-6,
+.profile-member-carrousel #field_id-13,
+.profile-member-carrousel #field_id-14,
+.profile-member-carrousel #field_id-11,
+.profile-member-carrousel #field_id-12,
+.profile-member-carrousel #field_id1,
+.profile-member-carrousel #field_id3,
+.profile-member-carrousel #field_id4,
+.profile-member-carrousel #field_id5,
+.profile-member-carrousel #field_id-7,
+.profile-member-carrousel #field_id-9,
+.profile-member-carrousel #field_id-4 {
+    display: none;
+    visibility: hidden;
+}
+
+.profile-member-header-right dl.details,
+.profile-member-stats dl.details {
+    font-size: var(--text-base);
+    display: flex;
+}
+
+.profile-stats-list #field_id-6 {
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+}
+
+.profile-stats-list #field_id-6 dt {
+    grid-row: 1;
+    grid-column: 1;
+}
+
+.profile-stats-list #field_id-6 dd {
+    grid-row: 1;
+    grid-column: 1;
+    padding-left: 90px;
+}
+
+.profile-stats-list #field_id-6 .post-stats {
+    grid-row: 2;
+}
+
+.profile-stats-list #field_id-6 .user-posts-links {
+    grid-row: 3;
+}
+
+.profile-stats-list #field_id-4 {
+    flex-direction: column;
+}
+
+@media (max-width: 800px) {
+    .profile-stats-list #field_id-4 {
+        flex-direction: row;
+    }
+}
+
+.profile-member-header-right dl.details dt,
+.profile-member-header-right dl.details dt span,
+.profile-member-header-right dl.details dd,
+.profile-member-stats dl.details dt,
+.profile-member-stats dl.details dt span,
+.profile-member-stats dl.details dd {
+    color: var(--text) !important;
+}
+
+.profile-member-header-right dl.details dt,
+.profile-member-stats dl.details dt {
+    float: unset;
+    text-align: unset;
+    width: unset;
+    padding-right: 5px;
+}
+
+.profile-member-header-right dl.details dd,
+.profile-member-stats dl.details dd {
+    margin-inline-start: unset !important;
+    padding-left: unset;
+    margin-bottom: 0.5em;
+}
+
+.profile-member-header-right .profile-rank {
+    margin-bottom: .5em;
+}
+
+.profile-fields-list #field_id-11 {
+    margin-top: 1em;
+}
+
+.profile-fields-list #field_id-9 .field_uneditable {
+    color: var(--text-soft);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: var(--text-tn);
+    font-family: "Lato", sans-serif;
+    letter-spacing: .25em;
+}
+
+.profile-fields-list #field_id1 {
+    margin: 1em 0;
+}
+
+.profile-fields-list #field_id1 dd {
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 5px;
+    margin-left: 25px !important;
+}
+
+.profile-fields-list #field_id1 .field_uneditable {
+    text-align: justify;
+    padding: .75em 0;
+}
+
+@media (max-width: 800px) {
+    .profile-fields-list #field_id4, .profile-fields-list #field_id5 {
+        flex-direction: column;
+    }
+}
+
+.profile-member-contact {
+    background: var(--bg-soft);
+    border-radius: var(--radius-sm);
+    justify-content: space-around;
+    align-items: center;
+    gap: .5rem;
+    flex-wrap: wrap;
+    margin: 2em 0;
+}
+
+#followBtn.follow::before, .followBtn.follow::before {
+    display: none;
+}
+
+.ajax-profil_edit {
+    top: -8px;
+    min-width: 18px !important;
+    height: 18px !important;
+    font-size: 12px !important;
+}
+
+.ajax-profil_edit img {
+    display: none;
+}
+
+.ajax-profil_edit::before {
+    font-family: "Material Symbols Outlined";
+    font-weight: 400;
+    font-style: normal;
+    font-size: 12px;
+    line-height: 1;
+    display: inline-block;
+    content: "\f88d";
+    vertical-align: baseline;
+    color: var(--text);
+}
+
+/* CARROUSEL */
+.profile-carousel {
+    position: relative;
+    max-width: 100%;
+    width: 500px;
+    margin: 10px auto;
+    overflow: hidden;
+    border-radius: var(--radius-md);
+}
+
+@media (max-width: 800px) {
+    .profile-carousel {
+        width: auto;
+    }
+}
+
+.profile-carousel-slides {
+    display: flex;
+    transition: transform 0.4s ease-in-out;
+}
+
+.profile-carousel-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.profile-carousel-slide img {
+    height: 400px;
+    object-fit: cover;
+    display: block;
+    margin: auto;
+    border-radius: var(--radius-md);
+}
+
+.profile-carousel-btn {
+    position: absolute;
+    top: 50%;
+    line-height: 32px;
+    text-align: center;
+    user-select: none;
+}
+
+.profile-carousel-btn.prev {
+    left: 8px;
+}
+
+.profile-carousel-btn.next {
+    right: 8px;
+}
+
+
+/* ==========================================================================
+   ÉDITION PROFIL
+   ========================================================================== */
+@media (max-width: 800px) {
+    .edit-page-user .page-options {
+        grid-column: 1 / span2;
+        grid-row: 1;
+    }
+}
+
+@media (max-width: 800px) {
+    .edit-page-user .page-content {
+        grid-column: 1 / span2;
+        grid-row: 2;
+    }
+}
+
+
+/* MENU */
+#tabs {
+    margin: unset;
+}
+
+#tabs ul {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 800px) {
+    #tabs ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+
+#tabs li {
+    font-size: var(--text-base) !important;
+    font-weight: 400 !important;
+}
+
+#tabs a {
+    float: unset !important;
+    background: unset !important;
+    margin: unset !important;
+    padding: unset !important;
+}
+
+#tabs .activetab a {
+    border-bottom: unset !important;
+    background-color: unset !important;
+}
+
+#tabs .activetab a span {
+    font-weight: 600;
+}
+
+#tabs a span, #tabs .activetab a span {
+    color: var(--text-base) !important;
+}
+
+#tabs a:hover span, #tabs .activetab a:hover span {
+    color: var(--text-soft);
+}
+
+
+/* PARAMÈTRES */
+#cp-main h3 {
+    border-color: var(--border);
+}
+
+.edit-page-user #cp-main {
+    margin: unset;
+}
+
+.edit-page-user h2 {
+    margin: 0 0 .5em 0;
+}
+
+.form-notice, .ucp-section,
+.page-content.ucp-friendsfoes .panel, .page-content.ucp-notifications .panel, .page-content.ucp-watchsearch .submit-buttons {
+    margin-bottom: 3em;
+}
+
+.ucp-registry .form-row, .ucp-fields .form-row, .ucp-rgpd .form-row,
+.ucp-preferences .form-row, .ucp-avatar .form-row {
+    display: flex;
+    flex-direction: column;
+    gap: .25em;
+    margin-bottom: 0.5em;
+}
+
+.form-row label span {
+    color: var(--text-base) !important;
+}
+
+.field-explain {
+    font-size: var(--text-sm);
+    color: var(--text-soft);
+    text-align: justify;
+}
+
+.form-label {
+    text-align: justify;
+}
+
+#profile_field_16_-7 li:nth-child(3) {
+    display: none;
+    visibility: hidden;
+}
+
+#profile_field_13_1, #profile_field_13_3 {
+    width: auto !important;
+}
+
+.ucp-fields .form-row:nth-child(10),
+.ucp-fields .form-row:nth-child(11),
+.ucp-fields .form-row img[alt*=Instagram] {
+    display: none;
+    visibility: hidden;
+}
+
+.ucp-awards .awards-fieldset {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    align-items: center;
+}
+
+.ucp-rgpd .form-field, .ucp-delete .form-field {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    gap: 1em;
+}
+
+.ucp-rgpd .field-notice .italic {
+    font-style: unset;
+}
+
+.ucp-preferences .radio-group .field-explain {
+    display: block;
+}
+
+.ucp-signature h1.page-title {
+    margin: unset !important;
+}
+
+#cp-main .panel {
+    background-color: var(--bg)
+}
+
+@media (max-width:800px) {
+    .ucp-signature #message-box textarea {
+        width: 80% !important;
+    }
+}
+
+.ucp-signature #smiley-box {
+    display: none;
+}
+
+.edit-page-user .page-content table.table1 thead {
+    display: none;
+}
+
+table.table1 tbody tr, table.table1 tbody td {
+    border: unset !important;
+}
+
+table.table1 tbody td {
+    padding: unset !important;
+}
+
+table.table1 tbody tr:hover, table.table1 tbody tr.hover {
+    background-color: unset;
+    color: var(--text);
+}
+
+table.table1 td {
+    color: var(--text) !important;
+    font-size: var(--text-base) !important;
+}
+
+.ucp-attachments table.table1 tbody,
+.ucp-followers  .followers_block {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2em;
+}
+
+@media (max-width:1200px) {
+    .ucp-attachments table.table1 tbody,
+    .ucp-followers  .followers_block {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width:800px) {
+    .ucp-attachments table.table1 tbody,
+    .ucp-followers  .followers_block {
+        grid-template-columns: 1fr;
+    }
+}
+
+.ucp-attachments table.table1 tbody tr {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    padding: 16px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-soft);
+}
+
+.ucp-attachments table.table1 tbody tr:hover {
+    transform: translateY(-1px);
+}
+
+.ucp-attachments table.table1 tbody td:nth-of-type(1) {
+    grid-column: 1 / span3;
+    grid-row: 1;
+    text-align: left !important;
+    font-family: "Playfair Display", serif;
+    font-weight: 500;
+}
+
+.ucp-attachments table.table1 tbody td:nth-of-type(2) {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.ucp-attachments table.table1 tbody td:nth-of-type(3) {
+    grid-column: 2 / span2;
+    grid-row: 2;
+}
+
+.ucp-attachments table.table1 tbody td:nth-of-type(4)::before {
+    content: "\f091";
+    font-family: "Material Symbols Outlined";
+    font-weight: 300;
+    font-style: normal;
+    line-height: 1;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 1.4rem;
+}
+
+.ucp-attachments table.table1 tbody td:nth-of-type(5) a img {
+    display: none;
+}
+
+.ucp-attachments table.table1 tbody td:nth-of-type(5) a::before {
+    font-family: "Material Symbols Outlined";
+    font-weight: 300;
+    font-style: normal;
+    line-height: 1;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 1.4rem;
+}
+
+.ucp-attachments table.table1 tbody td:nth-of-type(5) a:first-child::before {
+    content: "\e8f4";
+}
+
+.ucp-attachments table.table1 tbody td:nth-of-type(5) a:last-child::before {
+    content: "\f090";
+}
+
+.ucp-friendsfoes #cp-main .panel p {
+    font-size: var(--text-base);
+}
+
+.ucp-friendsfoes fieldset dl {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.ucp-friendsfoes fieldset dt {
+    width: unset;
+}
+
+.ucp-friendsfoes fieldset dd {
+    margin-left: unset;
+}
+
+.friends-foes-list {
+    display: flex;
+    align-items: center;
+    gap: 0.25em;
+}
+
+.follower-card {
+    padding: 16px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-soft);
+    min-width: unset;
+    width: unset;
+    max-width: unset;
+}
+
+.follower-card:hover {
+    transform: translateY(-1px);
+}
+
+.sprite-tabs_less {
+    display: none;
+}
+
+.friends-foes-list a:nth-of-type(2)::before {
+    content: "\f566";
+    font-family: "Material Symbols Outlined";
+    font-weight: 300;
+    font-style: normal;
+    line-height: 1;
+    vertical-align: top;
+    min-width: 28px;
+    height: 28px;
+    padding: 0 .25rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--toggle-border-soft);
+    border-radius: var(--radius-md);
+    background: var(--toggle-soft);
+    color: var(--text-soft) !important;
+    font-size: var(--text-sm);
+    font-weight: 700;
+    text-decoration: none;
+    transition: background .2s ease, border-color .2s ease, color .2s ease, transform .2s ease;
+    cursor: pointer;
+}
+
+.ucp-followers .follower-card img {
+    box-shadow: 0 1px 1px rgb(0 0 0 / .3), 0 0 1px rgb(0 0 0 / .3);
+    border: 1px solid var(--border);
+}
+
+.ucp-followers .follower-card .details a p {
+    color: var(--text-base) !important;
+    font-size: var(--title-tn);
+    font-family: "Lato", sans-serif;
+    font-weight: 600 !important;
+    letter-spacing: .1em;
+}
+
+.ucp-followers .follower-card button::before {
+    display: none;
+}
+
+.ucp-attachments .right-box, .ucp-notifications .right-box, .ucp-watchsearch form .right-box, .ucp-favouritesearch .right-box,
+.ucp-draftsearch .right-box, .ucp-topicdraftsearch .right-box, .ucp-tags .right-box {
+    display: flex;
+    gap: 0.5em;
+}
+
+.ucp-notifications fieldset.submit-buttons, .ucp-watchsearch fieldset.submit-buttons, .ucp-favouritesearch fieldset.submit-buttons,
+.ucp-draftsearch fieldset.submit-buttons, .ucp-topicdraftsearch fieldset.submit-buttons {
+    text-align: right;
+}
+
+.ucp-watchsearch #memberlist.table1 tbody, .ucp-favouritesearch .table1 tbody, .ucp-draftsearch .table1 tbody, .ucp-topicdraftsearch .table1 tbody {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1em;
+}
+
+@media (max-width:800px) {
+    .ucp-watchsearch #memberlist.table1 tbody, .ucp-favouritesearch .table1 tbody, .ucp-draftsearch .table1 tbody, .ucp-topicdraftsearch .table1 tbody {
+        grid-template-columns: 1fr;
+    }
+}
+
+.ucp-watchsearch #memberlist.table1 tbody .row1, .ucp-watchsearch #memberlist.table1 tbody .row2,
+.ucp-favouritesearch .table1 tbody .row1, .ucp-favouritesearch .table1 tbody .row2 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 16px;
+}
+
+.ucp-draftsearch .table1 tbody .row1, .ucp-draftsearch .table1 tbody .row2,
+.ucp-topicdraftsearch .table1 tbody .row1, .ucp-topicdraftsearch .table1 tbody .row2 {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    padding: 16px;
+}
+
+.ucp-watchsearch #memberlist.table1 tbody .row1:hover, .ucp-watchsearch #memberlist.table1 tbody .row2:hover,
+.ucp-favouritesearch .table1 tbody .row1:hover, .ucp-favouritesearch .table1 tbody .row2:hover,
+.ucp-draftsearch .table1 tbody .row1:hover, .ucp-draftsearch .table1 tbody .row2:hover,
+.ucp-topicdraftsearch .table1 tbody .row1:hover, .ucp-topicdraftsearch .table1 tbody .row2:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-soft);
+}
+
+.ucp-watchsearch #memberlist.table1 tbody .row1 td:nth-of-type(1),
+.ucp-watchsearch #memberlist.table1 tbody .row2 td:nth-of-type(1),
+.ucp-favouritesearch .table1 tbody .row1 td:nth-of-type(1),
+.ucp-favouritesearch .table1 tbody .row2 td:nth-of-type(1) {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.ucp-draftsearch .table1 tbody .row1 td:nth-of-type(1),
+.ucp-draftsearch .table1 tbody .row2 td:nth-of-type(1),
+.ucp-topicdraftsearch .table1 tbody .row1 td:nth-of-type(1),
+.ucp-topicdraftsearch .table1 tbody .row2 td:nth-of-type(1) {
+    grid-column: 1;
+    grid-row: 1 / span2;
+}
+
+.ucp-watchsearch #memberlist.table1 tbody .row1 td:nth-of-type(1) .fa-icon,
+.ucp-watchsearch #memberlist.table1 tbody .row2 td:nth-of-type(1) .fa-icon,
+.ucp-favouritesearch .table1 tbody .row1 td:nth-of-type(1) .fa-icon,
+.ucp-favouritesearch .table1 tbody .row2 td:nth-of-type(1) .fa-icon {
+    margin: unset;
+}
+
+.ucp-watchsearch #memberlist.table1 tbody .row1 td:nth-of-type(2),
+.ucp-watchsearch #memberlist.table1 tbody .row2 td:nth-of-type(2),
+.ucp-favouritesearch .table1 tbody .row1 td:nth-of-type(2),
+.ucp-favouritesearch .table1 tbody .row2 td:nth-of-type(2) {
+    grid-column: 2 / span2;
+    grid-row: 1;
+    margin-left: -50px;
+}
+
+.ucp-draftsearch .table1 tbody .row1 td:nth-of-type(2),
+.ucp-draftsearch .table1 tbody .row2 td:nth-of-type(2),
+.ucp-topicdraftsearch .table1 tbody .row1 td:nth-of-type(2),
+.ucp-topicdraftsearch .table1 tbody .row2 td:nth-of-type(2) {
+    grid-column: 1 / span2;
+    grid-row: 2;
+}
+
+.ucp-watchsearch #memberlist.table1 tbody .row1 td:nth-of-type(3),
+.ucp-watchsearch #memberlist.table1 tbody .row2 td:nth-of-type(3),
+.ucp-favouritesearch .table1 tbody .row1 td:nth-of-type(3),
+.ucp-favouritesearch .table1 tbody .row2 td:nth-of-type(3) {
+    grid-column: 1 / span3;
+    grid-row: 3;
+}
+
+.ucp-draftsearch .table1 tbody .row1 td:nth-of-type(3),
+.ucp-draftsearch .table1 tbody .row2 td:nth-of-type(3),
+.ucp-topicdraftsearch .table1 tbody .row1 td:nth-of-type(3),
+.ucp-topicdraftsearch .table1 tbody .row2 td:nth-of-type(3) {
+    grid-column: 1 / span2;
+    grid-row: 3;
+    width: auto;
+    text-align: left !important;
+}
+
+.ucp-watchsearch #memberlist.table1 tbody .row1 td:nth-of-type(4),
+.ucp-watchsearch #memberlist.table1 tbody .row2 td:nth-of-type(4),
+.ucp-favouritesearch .table1 tbody .row1 td:nth-of-type(4),
+.ucp-favouritesearch .table1 tbody .row2 td:nth-of-type(4) {
+    grid-column: 1;
+    grid-row: 4;
+    display: flex;
+    gap: 0.5em;
+}
+
+.ucp-watchsearch #memberlist.table1 tbody .row1 td:nth-of-type(4)::before,
+.ucp-watchsearch #memberlist.table1 tbody .row2 td:nth-of-type(4)::before,
+.ucp-favouritesearch .table1 tbody .row1 td:nth-of-type(4)::before,
+.ucp-favouritesearch .table1 tbody .row2 td:nth-of-type(4)::before {
+    font-family: "Material Symbols Outlined";
+    content: "\e0b9";
+    font-weight: 300;
+    font-style: normal;
+    line-height: 1;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 1.4rem;
+}
+
+.ucp-draftsearch .table1 tbody .row1 td:nth-of-type(4),
+.ucp-draftsearch .table1 tbody .row2 td:nth-of-type(4) {
+    grid-column: 1 / span2;
+    grid-row: 4;
+    width: auto;
+    text-align: left !important;
+}
+
+.ucp-topicdraftsearch .table1 tbody .row1 td:nth-of-type(4),
+.ucp-topicdraftsearch .table1 tbody .row2 td:nth-of-type(4) {
+    grid-column: 1;
+    grid-row: 5;
+}
+
+.ucp-watchsearch #memberlist.table1 tbody .row1 td:nth-of-type(5),
+.ucp-watchsearch #memberlist.table1 tbody .row2 td:nth-of-type(5),
+.ucp-favouritesearch .table1 tbody .row1 td:nth-of-type(5),
+.ucp-favouritesearch .table1 tbody .row2 td:nth-of-type(5) {
+    grid-column: 1 / span3;
+    grid-row: 2;
+    width: auto;
+    text-align: left !important;
+}
+
+.ucp-draftsearch .table1 tbody .row1 td:nth-of-type(5),
+.ucp-draftsearch .table1 tbody .row2 td:nth-of-type(5) {
+    grid-column: 1;
+    grid-row: 5;
+}
+
+.ucp-topicdraftsearch .table1 tbody .row1 td:nth-of-type(5),
+.ucp-topicdraftsearch .table1 tbody .row2 td:nth-of-type(5) {
+    grid-column: 2;
+    grid-row: 5;
+}
+
+.ucp-watchsearch #memberlist.table1 tbody .row1 td:nth-of-type(6),
+.ucp-watchsearch #memberlist.table1 tbody .row2 td:nth-of-type(6),
+.ucp-favouritesearch .table1 tbody .row1 td:nth-of-type(6),
+.ucp-favouritesearch .table1 tbody .row2 td:nth-of-type(6) {
+    grid-column: 2;
+    grid-row: 4;
+    display: flex;
+    gap: 0.5em;
+}
+
+.ucp-watchsearch #memberlist.table1 tbody .row1 td:nth-of-type(6)::before,
+.ucp-watchsearch #memberlist.table1 tbody .row2 td:nth-of-type(6)::before,
+.ucp-favouritesearch .table1 tbody .row1 td:nth-of-type(6)::before,
+.ucp-favouritesearch .table1 tbody .row2 td:nth-of-type(6)::before {
+    font-family: "Material Symbols Outlined";
+    content: "\e8f4";
+    font-weight: 300;
+    font-style: normal;
+    line-height: 1;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 1.4rem;
+}
+
+.ucp-draftsearch .table1 tbody .row1 td:nth-of-type(6),
+.ucp-draftsearch .table1 tbody .row2 td:nth-of-type(6) {
+    grid-column: 2;
+    grid-row: 5;
+}
+
+.ucp-watchsearch #memberlist.table1 tbody .row1 td:nth-of-type(7),
+.ucp-watchsearch #memberlist.table1 tbody .row2 td:nth-of-type(7),
+.ucp-favouritesearch .table1 tbody .row1 td:nth-of-type(7),
+.ucp-favouritesearch .table1 tbody .row2 td:nth-of-type(7) {
+    grid-column: 1 / span3;
+    grid-row: 5;
+}
+
+.ucp-watchsearch #memberlist.table1 tbody .row1 td:nth-of-type(7) br,
+.ucp-watchsearch #memberlist.table1 tbody .row2 td:nth-of-type(7) br,
+.ucp-favouritesearch .table1 tbody .row1 td:nth-of-type(7) br,
+.ucp-favouritesearch .table1 tbody .row2 td:nth-of-type(7) br {
+    display: none;
+}
+
+.ucp-watchsearch #memberlist.table1 tbody .row1 td:nth-of-type(8),
+.ucp-watchsearch #memberlist.table1 tbody .row2 td:nth-of-type(8),
+.ucp-favouritesearch .table1 tbody .row1 td:nth-of-type(8),
+.ucp-favouritesearch .table1 tbody .row2 td:nth-of-type(8) {
+    grid-column: 3;
+    grid-row: 4;
+}
+
+.ucp-watchsearch a.topictitle, .ucp-favouritesearch a.topictitle, .ucp-draftsearch a.topictitle, .ucp-topicdraftsearch a.topictitle {
+    font-size: var(--text-base);
+    font-family: Be Vietnam Pro;
+}
+
+.ucp-watchsearch .right-box a[href*="top"], .ucp-favouritesearch .right-box a[href*="top"], .ucp-draftsearch .right-box a[href*="top"], .ucp-topicdraftsearch .right-box a[href*="top"] {
+    display: none;
+}
+
+.ucp-watchsearch .posts .fa-icon, .ucp-favouritesearch .posts .fa-icon {
+    margin: 8px 0 0 0;
+    width: 36px;
+    height: 36px;
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-sm);
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-soft);
+    font-weight: 300 !important;
+    background: var(--surface);
+    transition: var(--transition);
+    font-size: 1.3em !important;
+}
+
+.ucp-watchsearch table.table1 tbody tr td:nth-of-type(7) a.gensmall.tooltipstered::before,
+.ucp-favouritesearch table.table1 tbody tr td:nth-of-type(7) a strong::before {
+    font-family: "Material Symbols Outlined";
+    font-weight: 300;
+    font-style: normal;
+    font-size: 1.35rem;
+    line-height: 1;
+    display: inline-block;
+    content: "\f6bd";
+    vertical-align: top;
+}
+
+.ucp-tags tbody {
+    display: flex;
+    gap: 2em;
+    flex-wrap: wrap;
+}
+
+.ucp-tags tbody tr {
+    display: flex;
+    gap: 1em;
+}
+
+.ucp-tags .right-box {
+    font-size: unset !important;
+}

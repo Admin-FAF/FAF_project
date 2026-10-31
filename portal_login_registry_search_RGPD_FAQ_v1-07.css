@@ -1,0 +1,562 @@
+/* ==========================================================================
+   PORTAIL
+   ========================================================================== */
+
+body.page-index {
+    position: relative;
+}
+
+body.is-redirecting {
+    background-color: var(--bg) !important;
+    overflow: hidden !important;
+}
+
+body.is-redirecting * {
+    display: none !important;
+}
+
+body.is-redirecting::before {
+    content: "Redirection en cours...";
+    display: flex !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg);
+    color: var(--text);
+    font-size: var(--title-tn);
+    font-family: 'Be Vietnam Pro', sans-serif;
+    z-index: 999;
+}
+
+/* HEADER */
+.hero-wrapper {
+    position: relative;
+}
+
+.hero-wrapper img {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50.5vw;
+    margin-right: -50vw;
+    max-width: unset;
+    height: calc(100vh - 118px);
+}
+
+@media (max-width:800px) {
+    .hero-wrapper img {
+        margin-left: -50vw;
+        height: unset;
+    }
+}
+
+.hero-wrapper img:hover {
+    filter: unset;
+    transform: unset;
+}
+
+.hook-content {
+    position: absolute;
+    top: 60px;
+    width: 50%;
+    text-align: justify;
+    margin-top: 2em;
+}
+
+@media (max-width:800px) {
+    .hook-content {
+        position: relative;
+        top: 0;
+        width: 100%;
+        padding-bottom: 2em;
+        border-bottom: 2px solid var(--border);
+    }
+}
+
+@media (max-width:800px) {
+    .hero-header-mobile {
+        display: block !important;
+        position: absolute;
+        top: 20px;
+        width: 50%;
+    }
+}
+
+.hero-kicker {
+    opacity: 1;
+    text-align: left;
+    letter-spacing: 0.3em;
+}
+
+@media (max-width:800px) {
+    .hook-content .hero-kicker {
+        display: none;
+    }
+}
+
+h1.hero-title {
+    color: var(--title);
+    font-family: "Playfair Display", serif;
+    font-size: var(--title-2xl);
+    font-weight: 500;
+    word-break: break-word;
+    margin: 0.5em 0 1em 0;
+    text-align: left;
+    display: inline-flex;
+    gap: 15px;
+}
+
+@media (max-width:800px) {
+    h1.hero-title {
+        font-size: var(--title-xl) !important;
+        line-height: 1.2;
+    }
+}
+
+@media (max-width:800px) {
+    .hook-content h1.hero-title {
+        display: none;
+    }
+}
+
+h1::after {
+    content: '';
+    display: inline-block;
+    width: 60px;
+    height: 2px;
+    background-color: var(--surface-alt);
+    flex-shrink: 0;
+    top: 40px;
+    position: relative;
+}
+
+.hero-action {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 2em;
+}
+
+
+/* CONTENU */
+table.portal {
+    margin-top: 3em;
+}
+
+table.portal tbody tr {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    column-gap: 4em;
+}
+
+@media (max-width:1200px) {
+    table.portal tbody tr {
+        grid-template-columns: 1fr;
+        column-gap: unset;
+    }
+}
+
+table.portal tbody tr td:nth-child(first) {
+    display: none;
+}
+
+table.portal tbody tr td:nth-child(2) {
+    grid-column: 1;
+    width: unset !important;
+}
+
+table.portal tbody tr td:nth-child(3) {
+    grid-column: 2;
+    width: unset !important;
+}
+
+@media (max-width:1200px) {
+    table.portal tbody tr td:nth-child(3) {
+        grid-column: 1;
+    }
+}
+
+/* Principal */
+table.portal tbody tr td:nth-child(2) .module {
+    background: var(--bg) !important;
+    border: unset !important;
+    border-radius: unset !important;
+    padding: unset !important;
+    box-shadow: unset !important;
+}
+
+table.portal tbody tr td:nth-child(2) .module::before {
+    height: unset !important;
+}
+
+.home-page-categories {
+    display: flex;
+    margin-bottom: 3em;
+    padding-bottom: 2em;
+    border-bottom: 2px solid var(--border);
+}
+
+@media (max-width:1200px) {
+    .home-page-categories {
+        flex-direction: column;
+        padding-bottom: unset;
+    }
+}
+
+.category-wrapper {
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: justify;
+}
+
+@media (max-width:1200px) {
+    .category-wrapper {
+        width: 100%;
+        padding-bottom: 2em;
+    }
+}
+
+.category-wrapper .material-symbols-outlined.circle-icon {
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
+    min-height: 60px;
+    margin-bottom: 0.5em;
+}
+
+h3.partners-title, h3.pub-title {
+    font-family: "Playfair Display", serif;
+    letter-spacing: 0.03em;
+    text-transform: none;
+    font-weight: 100;
+    font-size: var(--title-lg);
+    color: var(--title);
+}
+
+.home-page-pub {
+    margin-bottom: 3em;
+    padding-bottom: 2em;
+    border-bottom: 2px solid var(--border);
+}
+
+/* sidebar */
+table.portal .module {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 36px;
+    box-shadow: var(--shadow-soft);
+    margin-bottom: 2em;
+}
+
+table.portal .module::before {
+    content: '';
+    position: absolute;
+    margin-left: -37px;
+    width: 2px;
+    height: 80px;
+    background: var(--border-strong);
+}
+
+table.portal .module inner {
+    text-align: justify;
+}
+
+table.portal .module.mod-login-module h3 {
+    text-align: left;
+}
+
+table.portal .module .mod-login-avatar img {
+    display: block;
+}
+
+table.portal .module .mod-login-stats {
+    font-size: var(--texte-base);
+}
+
+.home-page-hook, .home-page-integration {
+    background: var(--bg-cat);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 36px;
+    text-align: justify;
+    margin-bottom: 2em;
+}
+
+h3.hook-title {
+    text-align: left;
+}
+
+@media (max-width:800px) {
+    .partners-content img {
+        height: 30px !important;
+    }
+}
+
+
+/* ==========================================================================
+   PAGE LOGIN
+   ========================================================================== */
+
+form[name="form_login"] .panel,
+form[name="form_login"] ~ .panel,
+.panel.row3, #cp-main .panel,
+#form_confirm .panel {
+    background: var(--bg);
+    border: unset;
+    box-shadow: unset;
+    padding: 36px 0 !important;
+}
+
+form[name="form_login"] .panel::before,
+form[name="form_login"] ~ .panel::before,
+.panel.row3::before, #cp-main .panel::before,
+#form_confirm .panel::before {
+    width: 0;
+}
+
+form[name="form_login"] .content {
+    color: var(--text);
+    font-family: Be Vietnam Pro;
+    font-size: var(--text-base);
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    overflow: unset;
+}
+
+@media (max-width: 800px) {
+    form[name="form_login"] .content {
+        grid-template-columns: 1fr;
+    }
+}
+
+form[name="form_login"] .h3 {
+    grid-row: 1;
+    grid-column: 1 / span2;
+}
+
+form[name="form_login"] .fields1.left {
+    background-color: var(--bg);
+    grid-row: 2;
+    grid-column: 1 / span2;
+}
+
+form[name="form_login"] .fld_connexion {
+    width: unset;
+}
+
+form[name="form_login"] .social_btn {
+    grid-row: 2;
+    grid-column: 2;
+}
+  
+@media (max-width: 1250px) {
+    form[name="form_login"] .social_btn {
+        grid-row: 3;
+        grid-column: 1 / span2;
+        margin-top: 1em;
+        justify-content: flex-start !important;
+    }
+}
+
+.fb_or {
+    background-color: transparent !important;
+    border: unset !important;
+    color: var(--text) !important;
+}
+
+
+/* ==========================================================================
+   PAGE ENREGISTREMENT
+   ========================================================================== */
+
+#cp-main {
+    float: unset !important;
+    width: 100% !important;
+    margin-left: unset !important;
+    margin-top: 4em;
+    margin-bottom: 2em;
+}
+
+#cp-main h1 {
+    color: var(--title) !important;
+    margin-left: unset !important;
+}
+
+#ucp fieldset dl {
+    padding: unset;
+    margin-bottom: 1em;
+}
+
+#ucp fieldset dt {
+    float: unset;
+    width: unset;
+    padding-bottom: 5px;
+}
+
+#ucp fieldset dd {
+    margin-left: unset;
+    margin-bottom: unset;
+}
+
+#ucp fieldset dd input.inputbox {
+    width: auto;
+}
+
+.ucp-main .submit-buttons .button1 {
+    padding: 9px 15px !important;
+}
+
+.ucp-main .submit-buttons .button2 {
+    padding: 6px 12px !important;
+}
+
+/* confirmation */
+#form_confirm .content {
+    color: var(--text);
+    font-family: 'Be Vietnam Pro';
+    font-size: var(--text-base);
+}
+
+#form_confirm .content .cf-turnstile {
+    margin: 2em 0;
+}
+
+
+/* ==========================================================================
+   CONDITIONS D'UTILISATION
+   ========================================================================== */
+
+/* Bloc d'avertissement Facebook / Alerte */
+.warning-box {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	padding: 1rem;
+	background-color: #fff3cd;
+	border: 1px solid #ffeeba;
+	border-radius: 6px;
+	color: #856404;
+}
+
+.warning-icon {
+	width: 32px;
+	height: 32px;
+	flex-shrink: 0;
+}
+
+/* Contenu des règles et CGU */
+.agreement-rules {
+    line-height: 1.6;
+    text-align: justify;
+    margin-top: 4em;
+}
+
+.reglement-liste {
+    margin: 1em 0;
+}
+
+/* Zone des cases à cocher */
+.agreement-checkboxes {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1rem;
+    background-color: var(--featured);
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    margin: 2em 0;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-top: 0.25rem;
+    cursor: pointer;
+}
+
+.checkbox-group label {
+    cursor: pointer;
+    font-size: var(--text-sm);
+    line-height: 1.4;
+}
+
+.checkbox-group.has-error .form-error {
+    line-height: unset;
+    margin-bottom: unset;
+    margin-top: unset;
+}
+
+/* Bouton de validation */
+.agreement-actions {
+    margin-bottom: 4em;
+}
+
+.agreement-actions .inner {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+
+#main-content a.cgu-buttons, #main-content input.cgu-buttons {
+    padding: 9px 15px;
+}
+
+
+/* ==========================================================================
+   RECHERCHE AVANCÉE
+   ========================================================================== */
+@media (max-width:1200px) {
+    .topiclist.topics.search {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+@media (max-width:800px) {
+    .topiclist.topics.search, .postlist-search {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+.topiclist.topics.search .span-tab, .topiclist.topics.search .lastpost span {
+    font-size: var(--text-base);
+    color: var(--text);
+}
+
+.search-message {
+    border-radius: var(--radius-md);
+    padding: 20px;
+}
+
+.search-message:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-soft);
+}
+
+.postlist-search .search-message .postbody {
+    gap: unset;
+    margin-top: unset;
+    margin-bottom: 1em;
+}
+
+.postlist-search .search-message .postprofile {
+    background: unset;
+    border-color: unset;
+    border-style: unset;
+    border-width: unset;
+}
+
+.postprofile a:link, .postprofile a:active, .postprofile a:visited, .postprofile dt.author a {
+    font-weight: normal !important;
+    color: inherit !important;
+}
